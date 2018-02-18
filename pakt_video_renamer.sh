@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Author:	Keith Patton 2018
+# Brief:	A BASH script to obtain video file names from a
+# 		DOCX file that is supplied with videos from PAKT
+
 ####################
 ## Script options ##
 ####################
