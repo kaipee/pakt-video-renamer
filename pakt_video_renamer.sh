@@ -146,7 +146,7 @@ case "$OUTPUT" in
   continue_on
   ;;
 "slow")
-  sleep 2
+  output_speed
   awk '{print $0; system("sleep .3");}' "$SANITIZED"
   printf '%s\n\n' "## DONE"
   continue_on
@@ -161,18 +161,27 @@ esac
 i=0
 declare -a VIDEOS
 for filename in *.mp4; do
-    VIDEOS[$i]="$filename"        
-    (( i++ ))
-#  echo "$line"
-#  ls -l "$line"
+  VIDEOS[$i]="$filename"        
+  (( i++ ))
 done
 
 ## Output the array to verify
 output_speed
 printf '\n%s\n\n' "## Gathering video filenames..."
-printf '%s\n' "${VIDEOS[@]}"
+#printf '%s\n' "${VIDEOS[@]}"
+for VIDEO in "${VIDEOS[@]}"; do
+  printf '%s\n' "video found : $VIDEO"
+done
+printf '%s\n\n' "## DONE"
+continue_on
 
 ## Sort video filenames with natural sort
+output_speed
+printf '\n%s\n\n' "## Sorting video filenames"
+declare -a SORTED
+SORTED=( $(printf '%s\n' "${VIDEOS[@]}" | sort -V) )
+printf '%s\n' "${SORTED[@]}"
+printf '%s\n\n' "## DONE"
 
 ## Compare number of video files with number of titles
 
