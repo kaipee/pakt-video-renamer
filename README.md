@@ -12,3 +12,11 @@ Pakt Publishing provides video tutorials for various subjects, for which they al
 Alongside the video files is an accompanying DOCX Word document which details the contents of each video file, along with a chapter / video title.
 
 This script parses through the DOCX file and renames the video files according to the chapter titles expressed in the document.
+
+## Usage
+
+Simply execute the script from within the extracted archive downloaded from Pakt.
+
+```sh
+$ pakt_viedo_renamer.sh ./*.docx
+```
