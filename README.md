@@ -11,4 +11,4 @@ Pakt Publishing provides video tutorials for various subjects, for which they al
 
 Alongside the video files is an accompanying DOCX Word document which details the contents of each video file, along with a chapter / video title.
 
-This scripts parses through the DOCX file and renames the video files according to the chapter titles expressed in the document.
+This script parses through the DOCX file and renames the video files according to the chapter titles expressed in the document.
