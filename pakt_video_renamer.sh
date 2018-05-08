@@ -88,6 +88,7 @@ cleanup
 output_speed
 printf '\n%s\n' "## Converting DOCX to PLAIN TEXT..."
 output_speed
+# TODO : check file being passed for conversion is actually a DOCX file
 docx2txt "$1" "$TXTFILE"
 if [ -f "$TXTFILE" ]; then
   printf '%s\n' "## DONE"
@@ -161,6 +162,7 @@ esac
 i=0
 declare -a VIDEOS
 for filename in *.mp4; do
+  filename=${filename%.*}
   VIDEOS[$i]="$filename"        
   (( i++ ))
 done
@@ -186,6 +188,12 @@ printf '%s\n\n' "## DONE"
 ## Compare number of video files with number of titles
 
 ## Rename video files with headings from array
+mkdir ./renamed
+fn=0
+while read name; do
+  cp "${SORTED[$fn]}.mp4" "./renamed/$name.mp4"
+  (( fn++ ))
+done < "$SANITIZED"
 
 ## Cleanup after ourself
 cleanup

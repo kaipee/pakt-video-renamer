@@ -1,10 +1,11 @@
 # Pakt Video Renamer
 
-PVR is a quick and dirty BASH script to rename video files provided by Pakt Publishing.
+PVR is a quick and dirty BASH script to rename video files provided by [Pakt Publishing](https://www.packtpub.com).
 
 ## How it works
 
 Pakt Publishing provides video tutorials for various subjects, for which they allow downloading. However, the video files are never named correclty (relating to the chapter / video subject), instead being named incrementally such as:
+
 * **VIDEO_1.1.mp4**
 * **VIDEO_1.2.mp4**
 * **VIDEO_2.1.mp4**
