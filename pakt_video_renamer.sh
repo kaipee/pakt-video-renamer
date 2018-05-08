@@ -191,13 +191,14 @@ printf '%s\n\n' "## DONE"
 # TODO : give output of renaming process
 # TODO : create better working directory
 # TODO : better handle actual video file types (do not assume all mp4)
-mkdir ./renamed
+mkdir "./$FILENAME"
 fn=0
 while read name; do
-  cp "${SORTED[$fn]}.mp4" "./renamed/$name.mp4"
+  cp "${SORTED[$fn]}.mp4" "./$FILENAME/$name.mp4"
   (( fn++ ))
 done < "$SANITIZED"
 
 ## Cleanup after ourself
 # TODO : cleanup working directories
+cp "$FILE" "./$FILENAME/"
 cleanup
