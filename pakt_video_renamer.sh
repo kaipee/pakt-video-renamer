@@ -188,6 +188,9 @@ printf '%s\n\n' "## DONE"
 ## Compare number of video files with number of titles
 
 ## Rename video files with headings from array
+# TODO : give output of renaming process
+# TODO : create better working directory
+# TODO : better handle actual video file types (do not assume all mp4)
 mkdir ./renamed
 fn=0
 while read name; do
@@ -196,4 +199,5 @@ while read name; do
 done < "$SANITIZED"
 
 ## Cleanup after ourself
+# TODO : cleanup working directories
 cleanup
